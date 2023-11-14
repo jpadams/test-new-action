@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-node@v4
       - name: Dagger
         working-directory: db-service
-        uses: dagger/dagger-for-github@dagger-for-gh-action-v0.9.3
+        uses: dagger/dagger-for-github@test-dash-m
         with:
           verb: run
           args: node build.js
