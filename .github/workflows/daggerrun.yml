@@ -37,5 +37,5 @@ jobs:
         with:
           module: github.com/shykes/daggerverse/hello
           verb: call
-          args: with-greeting --greeting Hola with-name --name Jeremy
+          args: with-greeting --greeting Hola with-name --name Jeremy message
           cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
