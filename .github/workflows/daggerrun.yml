@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - name: Dagger
+      - name: dagger run
         uses: dagger/dagger-for-github@test-dash-m
         with:
           workdir: db-service
@@ -32,3 +32,10 @@ jobs:
           args: node build.js
           cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
           version: "0.9.3"
+      - name: dagger call
+        uses: dagger/dagger-for-github@test-dash-m
+        with:
+          module: github.com/shykes/daggerverse/hello
+          verb: call
+          args: shout
+          cloud-token: ${{ secrets.DAGGER_CLOUD_TOKEN }}
